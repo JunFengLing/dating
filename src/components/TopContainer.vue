@@ -1,16 +1,19 @@
 <template>
-  <section class="container">
-    <div class="left-container">
-      <div class="avatar" v-on:click="changAvatar()"></div>
-    </div>
-    <div class="center-container">
-      <div class="name">{{ this.name }}</div>
-      <coin></coin>
-    </div>
-    <div class="right-container">
-      <div class="recharge" v-on:click="rechange()"></div>
-      <div class="lottery" v-on:click="lottery()"></div>
-      <div class="task" v-on:click="task()"></div>
+  <section class="top-container">
+    <div class="title"></div>
+    <div class="wrapper">
+      <div class="left-container">
+        <div class="avatar" v-on:click="changAvatar()"></div>
+      </div>
+      <div class="center-container">
+        <div class="name">{{ this.name }}</div>
+        <coin></coin>
+      </div>
+      <div class="right-container">
+        <div class="recharge" v-on:click="rechange()"></div>
+        <div class="lottery" v-on:click="lottery()"></div>
+        <div class="task" v-on:click="task()"></div>
+      </div>
     </div>
   </section>
 </template>
@@ -52,14 +55,20 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.title {
+  width: 368px;
+  height: 91px;
+  margin: 0 auto 30px;
+  background: url(../assets/image/标题.png) no-repeat;
+  background-size: 100% 100%;
+}
+.wrapper {
   display: flex;
   justify-content: space-between;
   height: 101px;
   margin: 0 10px;
 }
 .left-container {
-
 }
 .center-container {
   flex: 1;
@@ -68,7 +77,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 346px;
+  width: 350px;
 }
 .avatar {
   width: 100px;
@@ -77,9 +86,9 @@ export default {
   background-size: 100% 100%;
 }
 .name {
-  height: 50px;
-  line-height: 50px;
-  margin-left: 20px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 10px;
   text-align: left;
 }
 .right-container div {

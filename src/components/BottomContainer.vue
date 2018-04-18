@@ -1,11 +1,11 @@
 <template>
-  <section class="game">
+  <section class="bottom-container">
     <div class="title">全部游戏</div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(itemList, index) in gameList" v-bind:key="index">
-          <div class="game-icon">
-            <div v-for="(item, index) in itemList" v-bind:key="index">
+          <div class="game-wrapper">
+            <div v-for="item in itemList" v-bind:key="item.id">
               <img v-bind:src="item.img" width="100%" height="100%"/>
             </div>
           </div>
@@ -28,26 +28,31 @@ export default {
       gameList: [
         [
           {
+            id: 0,
             img: require('../assets/image/游戏icon_1.png'),
             url: ''
           },
           {
+            id: 1,
             img: require('../assets/image/游戏icon_1.png'),
             url: ''
           }
         ],
         [
           {
+            id: 2,
             img: require('../assets/image/游戏icon_1.png'),
             url: ''
           },
           {
+            id: 3,
             img: require('../assets/image/游戏icon_1.png'),
             url: ''
           }
         ],
         [
           {
+            id: 4,
             img: require('../assets/image/游戏icon_1.png'),
             url: ''
           }
@@ -60,7 +65,7 @@ export default {
   },
   methods: {
     swiper () {
-      return new Swiper('.game .swiper-container', {
+      return new Swiper('.bottom-container .swiper-container', {
         direction: 'horizontal',
         loop: true,
         pagination: {
@@ -82,25 +87,25 @@ export default {
 </script>
 
 <style scoped>
-.game {
-  height: 686px;
+.bottom-container {
+  height: 690px;
 }
 .title {
-  height: 72px;
-  line-height: 72px;
+  height: 70px;
+  line-height: 70px;
 }
 .swiper-container {
-  height: 614px;
+  height: 620px;
 }
-.game-icon {
+.game-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 574px;
+  width: 580px;
   height: 100%;
   margin: 0 auto;
 }
-.game-icon div {
+.game-wrapper div {
   width: 260px;
   height: 440px;
 }

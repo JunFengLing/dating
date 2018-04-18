@@ -56,13 +56,13 @@ export default {
 
 <style scoped>
 .advertisement {
-  height: 220px;
+  height: 260px;
   background: url(../assets/image/系统消息背景.png) repeat;
 }
 .broadcast {
   display: flex;
-  height: 68px;
-  line-height: 68px;
+  height: 70px;
+  line-height: 70px;
   margin-top: 2px;
   background: url(../assets/image/系统消息背景.png) repeat;
 }

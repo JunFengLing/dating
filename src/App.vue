@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <div id="title"></div>
     <top-container></top-container>
     <middle-container></middle-container>
     <bottom-container></bottom-container>
@@ -39,20 +38,12 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
   height: 1377px;
   text-align: center;
   font-size: 28px;
   font-weight: bold;
   color: #ffffff;
   background: url(./assets/image/背景.png) no-repeat;
-  background-size: 100% 100%;
-}
-#title {
-  width: 368px;
-  height: 91px;
-  margin: 0 auto;
-  background: url(./assets/image/标题.png) no-repeat;
   background-size: 100% 100%;
 }
 </style>

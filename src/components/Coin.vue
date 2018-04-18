@@ -2,7 +2,12 @@
   <section class="coin">
     <div class="coin-icon"></div>
     <div class="coin-amount">
-      <div class="coin-number" v-for="(item, index) in coinNumberList" v-bind:key="index" v-bind:class="coinNumber(item)"></div>
+      <div
+        class="coin-number"
+        v-for="(item, index) in coinNumberList"
+        v-bind:key="index"
+        v-bind:class="coinNumber(item)">
+      </div>
     </div>
     <div class="add-coin" v-on:click="addCoin()"></div>
   </section>
@@ -38,7 +43,7 @@ export default {
 <style scoped>
 .coin {
   position: relative;
-  width: 250px;
+  width: 260px;
   height: 50px
 }
 .coin-icon {
@@ -50,18 +55,6 @@ export default {
   background-size: 100% 100%;
   z-index: 1;
 }
-.coin-amount {
-  position: absolute;
-  left: 5px;
-  bottom: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 236px;
-  height: 40px;
-  background: url(../assets/image/金币数背景.png) no-repeat;
-  background-size: 100% 100%;
-}
 .add-coin {
   position: absolute;
   right: 0;
@@ -70,6 +63,18 @@ export default {
   background: url(../assets/image/加金币按钮.png) no-repeat;
   background-size: 100% 100%;
   z-index: 1;
+}
+.coin-amount {
+  position: absolute;
+  left: 12px;
+  bottom: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 236px;
+  height: 40px;
+  background: url(../assets/image/金币数背景.png) no-repeat;
+  background-size: 100% 100%;
 }
 .coin-number {
   width: 17px;
