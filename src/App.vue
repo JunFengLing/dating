@@ -21,6 +21,19 @@ export default {
   computed: {
   },
   methods: {
+    test () {
+      this.$axios({
+        url: 'test',
+        method: 'get'
+      }).then(res => {
+        console.log(res.status)
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  },
+  created () {
+    this.test()
   },
   mounted () {
   },

@@ -2,8 +2,9 @@
   <section class="top-container">
     <div class="title"></div>
     <div class="wrapper">
-      <div class="left-container">
-        <div class="avatar" v-on:click="changAvatar()"></div>
+      <div class="left-container" v-on:click="changAvatar()">
+        <div class="avatar-bg"></div>
+        <div class="avatar"></div>
       </div>
       <div class="center-container">
         <div class="name">{{ this.name }}</div>
@@ -69,6 +70,9 @@ export default {
   margin: 0 10px;
 }
 .left-container {
+  position: relative;
+  width: 100px;
+  height: 100%;
 }
 .center-container {
   flex: 1;
@@ -79,11 +83,18 @@ export default {
   align-items: center;
   width: 350px;
 }
-.avatar {
+.avatar-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100px;
   height: 100%;
   background: url(../assets/image/头像背景.png) no-repeat;
   background-size: 100% 100%;
+  z-index: 1;
+}
+.avatar {
+
 }
 .name {
   height: 40px;
