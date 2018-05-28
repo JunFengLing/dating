@@ -6,7 +6,8 @@
         class="coin-number"
         v-for="(item, index) in coinNumberList"
         v-bind:key="index"
-        v-bind:class="coinNumber(item)">
+        v-bind:class="coinNumber(item)"
+      >
       </div>
     </div>
     <div class="add-coin" v-on:click="addCoin()"></div>

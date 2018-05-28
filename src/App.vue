@@ -22,14 +22,14 @@ export default {
   },
   methods: {
     test () {
-      this.$axios({
-        url: 'test',
-        method: 'get'
-      }).then(res => {
-        console.log(res.status)
-      }).catch(err => {
-        console.log(err)
-      })
+      return fetch('https://www.baidu.com')
+        .then(res => res.text())
+        .then(body => {
+          console.log(body)
+        })
+        .catch(err => {
+          console.error(err)
+        })
     }
   },
   created () {

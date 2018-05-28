@@ -7,7 +7,7 @@
         <div class="avatar"></div>
       </div>
       <div class="center-container">
-        <div class="name">{{ this.name }}</div>
+        <div class="name">{{ name }}</div>
         <coin></coin>
       </div>
       <div class="right-container">

@@ -5,7 +5,13 @@
       <div class="broadcast-icon"></div>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, index) in broadcastMsg" v-bind:key="index">{{ item }}</div>
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in broadcastMsg"
+            v-bind:key="index"
+          >
+            {{ item }}
+          </div>
         </div>
       </div>
     </div>
