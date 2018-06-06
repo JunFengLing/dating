@@ -1,5 +1,5 @@
 <template>
-  <section class="load" v-show="isShow">
+  <section class="load">
     <div class="logo"></div>
     <div class="progress">{{ progress }}%</div>
     <div class="progress-bar-bg">
@@ -15,7 +15,6 @@ export default {
   name: 'load',
   data () {
     return {
-      isShow: true,
       progress: 0
     }
   },

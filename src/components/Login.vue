@@ -1,5 +1,5 @@
 <template>
-  <div class="login" v-show="isShow">
+  <div class="login">
     <div class="login-container">
       <div class="login-title"></div>
       <div class="close-btn" v-on:click="close()"></div>
@@ -29,7 +29,7 @@ export default {
   name: 'register',
   data () {
     return {
-      isShow: false
+
     }
   },
   methods: {
@@ -37,10 +37,9 @@ export default {
 
     },
     login () {
-
+      eventBus.$emit('NotifyShowDaTing')
     },
     register () {
-      this.isShow = false
       eventBus.$emit('NotifyShowRegister')
     },
     forgetPassword () {
@@ -48,9 +47,7 @@ export default {
     }
   },
   mounted () {
-    eventBus.$on('NotifyShowLogin', () => {
-      this.isShow = true
-    })
+
   }
 }
 </script>

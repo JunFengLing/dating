@@ -1,5 +1,5 @@
 <template>
-  <div class="register" v-show="isShow">
+  <div class="register">
     <div class="register-container">
       <div class="register-title"></div>
       <div class="close-btn" v-on:click="close()"></div>
@@ -19,7 +19,7 @@
         <div class="register-btn" v-on:click="register()"></div>
         <div class="link-container">
           <div class="check-box" v-bind:class="checkBoxClass" v-on:click="check()"></div>
-          <div>我已阅读并同意<span v-on:click="">《用户协议》</span></div>
+          <div>我已阅读并同意<span v-on:click="jump()">《用户协议》</span></div>
         </div>
       </div>
     </div>
@@ -27,13 +27,12 @@
 </template>
 
 <script>
-import eventBus from '../eventBus.js'
+// import eventBus from '../eventBus.js'
 
 export default {
   name: 'register',
   data () {
     return {
-      isShow: false,
       isCheck: false
     }
   },
@@ -51,12 +50,13 @@ export default {
     },
     close () {
 
+    },
+    jump () {
+
     }
   },
   mounted () {
-    eventBus.$on('NotifyShowRegister', () => {
-      this.isShow = true
-    })
+
   }
 }
 </script>

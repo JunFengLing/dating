@@ -1,5 +1,5 @@
 <template>
-  <section class="bottom-container">
+  <section class="game-entry">
     <div class="title">全部游戏</div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -22,7 +22,7 @@
 import Swiper from '../../static/js/swiper-4.2.2.min.js'
 
 export default {
-  name: 'bottom-container',
+  name: 'game-entry',
   data () {
     return {
       gameList: [
@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     swiper () {
-      return new Swiper('.bottom-container .swiper-container', {
+      return new Swiper('.game-entry .swiper-container', {
         direction: 'horizontal',
         loop: true,
         pagination: {
@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style scoped>
-.bottom-container {
+.game-entry {
   height: 690px;
 }
 .title {
