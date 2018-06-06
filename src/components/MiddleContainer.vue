@@ -63,20 +63,20 @@ export default {
 <style scoped>
 .advertisement {
   height: 260px;
-  background: url(../assets/image/系统消息背景.png) repeat;
+  background: url(../assets/image/game/系统消息背景.png) repeat;
 }
 .broadcast {
   display: flex;
   height: 70px;
   line-height: 70px;
   margin-top: 2px;
-  background: url(../assets/image/系统消息背景.png) repeat;
+  background: url(../assets/image/game/系统消息背景.png) repeat;
 }
 .broadcast-icon {
   width: 37px;
   height: 36px;
   margin: auto 20px;
-  background: url(../assets/image/喇叭标志.png) no-repeat;
+  background: url(../assets/image/game/喇叭标志.png) no-repeat;
   background-size: 100% 100%;
 }
 .swiper-container {

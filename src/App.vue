@@ -1,17 +1,13 @@
 <template>
   <div id="app">
-    <top-container></top-container>
-    <middle-container></middle-container>
-    <bottom-container></bottom-container>
-    <navigation></navigation>
+    <entry></entry>
+    <da-ting></da-ting>
   </div>
 </template>
 
 <script>
-import TopContainer from './components/TopContainer'
-import MiddleContainer from './components/MiddleContainer'
-import BottomContainer from './components/BottomContainer'
-import Navigation from './components/Navigation'
+import Entry from './components/Entry'
+import DaTing from './components/DaTing'
 
 export default {
   name: 'App',
@@ -38,25 +34,12 @@ export default {
   mounted () {
   },
   components: {
-    'top-container': TopContainer,
-    'middle-container': MiddleContainer,
-    'bottom-container': BottomContainer,
-    'navigation': Navigation
+    'entry': Entry,
+    'da-ting': DaTing
   }
 }
 </script>
 
 <style>
-#app {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 1377px;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  color: #ffffff;
-  background: url(./assets/image/背景.png) no-repeat;
-  background-size: 100% 100%;
-}
+
 </style>

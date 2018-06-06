@@ -50,19 +50,19 @@ export default {
   flex: 1;
 }
 .inactive-game-btn {
-  background: url(../assets/image/游戏按钮_1.png) no-repeat;
+  background: url(../assets/image/game/游戏按钮_1.png) no-repeat;
   background-size: 100% 100%;
 }
 .active-game-btn {
-  background: url(../assets/image/游戏按钮_2.png) no-repeat;
+  background: url(../assets/image/game/游戏按钮_2.png) no-repeat;
   background-size: 100% 100%;
 }
 .inactive-shop-btn {
-  background: url(../assets/image/商城按钮_1.png) no-repeat;
+  background: url(../assets/image/game/商城按钮_1.png) no-repeat;
   background-size: 100% 100%;
 }
 .active-shop-btn {
-  background: url(../assets/image/商城按钮_2.png) no-repeat;
+  background: url(../assets/image/game/商城按钮_2.png) no-repeat;
   background-size: 100% 100%;
 }
 </style>

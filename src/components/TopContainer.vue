@@ -60,7 +60,7 @@ export default {
   width: 368px;
   height: 91px;
   margin: 0 auto 30px;
-  background: url(../assets/image/标题.png) no-repeat;
+  background: url(../assets/image/game/标题.png) no-repeat;
   background-size: 100% 100%;
 }
 .wrapper {
@@ -89,7 +89,7 @@ export default {
   bottom: 0;
   width: 100px;
   height: 100%;
-  background: url(../assets/image/头像背景.png) no-repeat;
+  background: url(../assets/image/game/头像背景.png) no-repeat;
   background-size: 100% 100%;
   z-index: 1;
 }
@@ -107,15 +107,15 @@ export default {
   height: 70px;
 }
 .recharge {
-  background: url(../assets/image/充值按钮.png) no-repeat;
+  background: url(../assets/image/game/充值按钮.png) no-repeat;
   background-size: 100% 100%;
 }
 .lottery {
-  background: url(../assets/image/抽奖按钮.png) no-repeat;
+  background: url(../assets/image/game/抽奖按钮.png) no-repeat;
   background-size: 100% 100%;
 }
 .task {
-  background: url(../assets/image/任务.png) no-repeat;
+  background: url(../assets/image/game/任务.png) no-repeat;
   background-size: 100% 100%;
 }
 </style>

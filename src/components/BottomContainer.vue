@@ -29,31 +29,31 @@ export default {
         [
           {
             id: 0,
-            img: require('../assets/image/游戏icon_1.png'),
+            img: require('../assets/image/game/游戏icon_1.png'),
             url: ''
           },
           {
             id: 1,
-            img: require('../assets/image/游戏icon_1.png'),
+            img: require('../assets/image/game/游戏icon_1.png'),
             url: ''
           }
         ],
         [
           {
             id: 2,
-            img: require('../assets/image/游戏icon_1.png'),
+            img: require('../assets/image/game/游戏icon_1.png'),
             url: ''
           },
           {
             id: 3,
-            img: require('../assets/image/游戏icon_1.png'),
+            img: require('../assets/image/game/游戏icon_1.png'),
             url: ''
           }
         ],
         [
           {
             id: 4,
-            img: require('../assets/image/游戏icon_1.png'),
+            img: require('../assets/image/game/游戏icon_1.png'),
             url: ''
           }
         ]
