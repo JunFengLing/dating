@@ -30,8 +30,9 @@ export default {
       if (this.progress < 100) {
         this.progress++
         if (this.progress === 100) {
-          this.isShow = false
-          eventBus.$emit('NotifyShowLogin')
+          eventBus.$emit('NotifyShowPage', {
+            page: 'login'
+          })
         }
       }
     }, 20)

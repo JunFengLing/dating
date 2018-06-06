@@ -37,10 +37,14 @@ export default {
 
     },
     login () {
-      eventBus.$emit('NotifyShowDaTing')
+      eventBus.$emit('NotifyShowPage', {
+        page: 'game'
+      })
     },
     register () {
-      eventBus.$emit('NotifyShowRegister')
+      eventBus.$emit('NotifyShowPage', {
+        page: 'register'
+      })
     },
     forgetPassword () {
 

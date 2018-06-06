@@ -10,11 +10,13 @@
       >
       </div>
     </div>
-    <div class="add-coin" v-on:click="addCoin()"></div>
+    <div class="add-coin" v-on:click="charge()"></div>
   </section>
 </template>
 
 <script>
+import eventBus from '../eventBus.js'
+
 export default {
   name: 'coin',
   data () {
@@ -28,8 +30,8 @@ export default {
     }
   },
   methods: {
-    addCoin () {
-      this.coinAmount++
+    charge () {
+      eventBus.$emit('NotifyShowCharge')
     },
     coinNumber (number) {
       return `coin-number-${number}`

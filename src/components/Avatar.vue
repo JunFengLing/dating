@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     changAvatar () {
-      alert('chang avatar')
+      alert('change avatar')
     }
   },
   mounted () {

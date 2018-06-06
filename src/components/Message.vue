@@ -1,6 +1,6 @@
 <template>
-  <section class="system-message">
-    <div class="system-message-icon"></div>
+  <section class="message">
+    <div class="message-icon"></div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div
@@ -19,7 +19,7 @@
 import Swiper from '../../static/js/swiper-4.2.2.min.js'
 
 export default {
-  name: 'system-message',
+  name: 'message',
   data () {
     return {
       broadcastMsg: [
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     swiper () {
-      return new Swiper('.system-message .swiper-container', {
+      return new Swiper('.message .swiper-container', {
         autoplay: true,
         direction: 'vertical',
         loop: true
@@ -58,14 +58,14 @@ export default {
 </script>
 
 <style scoped>
-.system-message {
+.message {
   display: flex;
   height: 70px;
   line-height: 70px;
   margin-top: 2px;
   background: url(../assets/image/game/系统消息背景.png) repeat;
 }
-.system-message-icon {
+.message-icon {
   width: 37px;
   height: 36px;
   margin: auto 20px;
