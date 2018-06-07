@@ -1,6 +1,31 @@
 <template>
   <section class="shop">
     <comp-title></comp-title>
+    <message></message>
+    <div>
+      <div class="sub-title">手机充值</div>
+      <div class="phone-charge-container">
+        <phone-charge-item
+          v-for="(item, index) in phoneChargeList"
+          v-bind:key="index"
+          v-bind:itemvalue="item"
+        >
+        </phone-charge-item>
+      </div>
+    </div>
+    <div>
+      <div class="sub-title">商品</div>
+      <div class="goods-container">
+        <goods-item
+          v-for="(item, index) in goodsList"
+          v-bind:key="index"
+          v-bind:itemvalue="item"
+          v-bind:itemindex="index"
+        >
+        </goods-item>
+      </div>
+    </div>
+    <navigation></navigation>
   </section>
 </template>
 
@@ -8,34 +33,85 @@
 import eventBus from '../eventBus.js'
 
 import Title from './Title'
+import Message from './Message'
+import PhoneChargeItem from './PhoneChargeItem'
+import GoodsItem from './GoodsItem'
+import Navigation from './Navigation'
 
 export default {
-  name: 'component-title',
+  name: 'game',
   data () {
     return {
-      page: 'game'
+      page: 'game',
+      phoneChargeList: [
+        {
+          money: 10,
+          coin: 100000
+        },
+        {
+          money: 50,
+          coin: 100000
+        },
+        {
+          money: 100,
+          coin: 100000
+        }
+      ],
+      goodsList: [
+        {
+          goods: 0,
+          name: '小猪佩奇毛绒公仔',
+          money: 25,
+          coin: 100000
+        },
+        {
+          goods: 0,
+          name: '小猪佩奇毛绒公仔',
+          money: 25,
+          coin: 100000
+        },
+        {
+          goods: 0,
+          name: '小猪佩奇毛绒公仔',
+          money: 25,
+          coin: 100000
+        },
+        {
+          goods: 0,
+          name: '小猪佩奇毛绒公仔',
+          money: 25,
+          coin: 100000
+        },
+        {
+          goods: 0,
+          name: '小猪佩奇毛绒公仔',
+          money: 25,
+          coin: 100000
+        },
+        {
+          goods: 0,
+          name: '小猪佩奇毛绒公仔',
+          money: 25,
+          coin: 100000
+        }
+      ]
     }
   },
   computed: {
-    titleStyle () {
-      const titleObj = {
-        game: '游戏_标题',
-        shop: '商城_标题',
-        profile: '个人中心_标题'
-      }
-      return {
-        'backgroundImage': `url(../../static/image/${titleObj[this.page]}.png)`,
-        'backgroundSize': '100% 100%'
-      }
-    }
+
+  },
+  methods: {
+
   },
   components: {
-    'comp-title': Title
+    'comp-title': Title,
+    'message': Message,
+    'phone-charge-item': PhoneChargeItem,
+    'goods-item': GoodsItem,
+    'navigation': Navigation
   },
   mounted () {
-    eventBus.$on('NotifyShowPage', params => {
-      this.page = params.page
-    })
+
   }
 }
 </script>
@@ -52,5 +128,17 @@ export default {
   color: #ffffff;
   background: url(../assets/image/game/背景.png) no-repeat;
   background-size: 100% 100%;
+}
+.sub-title {
+  height: 68px;
+  line-height: 68px;
+  background-color: rgba(52,20,12,0.6);
+  font-size: 32px;
+}
+.phone-charge-container, .goods-container {
+  display: flex;
+}
+.goods-container {
+  flex-wrap: wrap;
 }
 </style>

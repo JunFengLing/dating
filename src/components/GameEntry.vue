@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import eventBus from '../eventBus.js'
 import Swiper from '../../static/js/swiper-4.2.2.min.js'
 
 export default {
@@ -79,8 +80,12 @@ export default {
     }
   },
   mounted () {
-    this.$nextTick(() => {
-      this.swiper()
+    eventBus.$on('NotifyShowPage', params => {
+      if (params.page === 'game') {
+        this.$nextTick(() => {
+          this.swiper()
+        })
+      }
     })
   }
 }

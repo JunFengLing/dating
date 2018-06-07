@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <comp-load v-if="page === 'load'"></comp-load>
-    <comp-login v-else-if="page === 'login'"></comp-login>
-    <comp-register v-else-if="page === 'register'"></comp-register>
-    <comp-game v-else-if="page === 'game'"></comp-game>
-    <comp-shop v-else-if="page === 'shop'"></comp-shop>
-    <comp-profile v-else-if="page === 'profile'"></comp-profile>
+    <comp-load v-show="page === 'load'"></comp-load>
+    <comp-login v-show="page === 'login'"></comp-login>
+    <comp-register v-show="page === 'register'"></comp-register>
+    <comp-game v-show="page === 'game'"></comp-game>
+    <comp-shop v-show="page === 'shop'"></comp-shop>
+    <comp-profile v-show="page === 'profile'"></comp-profile>
     <pop-charge></pop-charge>
     <pop-task></pop-task>
   </div>
