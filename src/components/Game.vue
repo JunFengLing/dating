@@ -1,5 +1,6 @@
 <template>
   <section class="game">
+    <comp-title></comp-title>
     <div class="container">
       <avatar></avatar>
       <div class="btn-container">
@@ -18,6 +19,7 @@
 <script>
 import eventBus from '../eventBus.js'
 
+import Title from './Title'
 import Avatar from './Avatar'
 import Message from './Message'
 import GameEntry from './GameEntry'
@@ -55,6 +57,7 @@ export default {
     }
   },
   components: {
+    'comp-title': Title,
     'avatar': Avatar,
     'message': Message,
     'game-entry': GameEntry,
@@ -69,6 +72,18 @@ export default {
 </script>
 
 <style scoped>
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1377px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  background: url(../assets/image/game/背景.png) no-repeat;
+  background-size: 100% 100%;
+}
 .container, .btn-container {
   display: flex;
   justify-content: space-between;

@@ -42,7 +42,10 @@ export default {
 
 <style scoped>
 .load {
+  height: 1334px;
   padding-top: 250px;
+  background: url(../assets/image/login/背景.jpg) no-repeat;
+  background-size: 100% 100%;
 }
 .logo {
   width: 510px;

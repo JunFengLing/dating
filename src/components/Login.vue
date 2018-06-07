@@ -58,7 +58,10 @@ export default {
 
 <style scoped>
 .login {
+  height: 1334px;
   padding-top: 320px;
+  background: url(../assets/image/login/背景.jpg) no-repeat;
+  background-size: 100% 100%;
 }
 .login-container {
   position: relative;

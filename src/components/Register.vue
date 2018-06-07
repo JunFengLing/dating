@@ -65,7 +65,10 @@ export default {
 
 <style scoped>
 .register {
+  height: 1334px;
   padding-top: 320px;
+  background: url(../assets/image/login/背景.jpg) no-repeat;
+  background-size: 100% 100%;
 }
 .register-container {
   position: relative;
