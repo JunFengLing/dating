@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import eventBus from '../eventBus.js'
+// import eventBus from '../eventBus.js'
 
 import Title from './Title'
 import Message from './Message'
@@ -130,8 +130,8 @@ export default {
   background-size: 100% 100%;
 }
 .sub-title {
-  height: 68px;
-  line-height: 68px;
+  height: 70px;
+  line-height: 70px;
   background-color: rgba(52,20,12,0.6);
   font-size: 32px;
 }

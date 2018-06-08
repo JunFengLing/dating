@@ -50,7 +50,9 @@ export default {
       eventBus.$emit('NotifyShowCharge')
     },
     lottery () {
-      alert('lottery')
+      eventBus.$emit('NotifyShowPage', {
+        page: 'profile'
+      })
     },
     task () {
       eventBus.$emit('NotifyShowTask')

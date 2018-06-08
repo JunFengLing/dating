@@ -2,8 +2,8 @@
   <section class="load">
     <div class="logo"></div>
     <div class="progress">{{ progress }}%</div>
-    <div class="progress-bar-bg">
-      <div class="progress-bar" v-bind:style="progressBarStyle"></div>
+    <div class="bar-container">
+      <div class="bar" v-bind:style="barStyle"></div>
     </div>
   </section>
 </template>
@@ -19,23 +19,28 @@ export default {
     }
   },
   computed: {
-    progressBarStyle () {
+    barStyle () {
       return {
         'right': `${100 - this.progress}%`
       }
     }
   },
-  mounted () {
-    setInterval(() => {
-      if (this.progress < 100) {
-        this.progress++
-        if (this.progress === 100) {
-          eventBus.$emit('NotifyShowPage', {
-            page: 'login'
-          })
+  methods: {
+    setProgress () {
+      setInterval(() => {
+        if (this.progress < 100) {
+          this.progress++
+          if (this.progress === 100) {
+            eventBus.$emit('NotifyShowPage', {
+              page: 'login'
+            })
+          }
         }
-      }
-    }, 20)
+      }, 20)
+    }
+  },
+  mounted () {
+    this.setProgress()
   }
 }
 </script>
@@ -43,39 +48,38 @@ export default {
 <style scoped>
 .load {
   height: 1334px;
-  padding-top: 250px;
-  background: url(../assets/image/login/背景.jpg) no-repeat;
+  padding-top: 350px;
+  background-image: url(../../static/image/背景.jpg);
   background-size: 100% 100%;
 }
 .logo {
   width: 510px;
   height: 237px;
   margin: 0 auto 250px;
-  background: url(../assets/image/load/logo.png) no-repeat;
+  background-image: url(../../static/image/加载_logo.png);
   background-size: 100% 100%;
 }
 .progress {
   color: #ffa509;
   text-align: center;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: bold;
 }
-.progress-bar-bg {
+.bar-container {
   position: relative;
   width: 569px;
   height: 47px;
   margin: 12px auto 0;
-  background: url(../assets/image/load/进度条背景.png) no-repeat;
+  background-image: url(../../static/image/加载_进度条背景.png);
   background-size: 100% 100%;
   overflow: hidden;
 }
-.progress-bar {
+.bar {
   position: absolute;
-  right: 0;
   top: 0;
   width: 569px;
   height: 47px;
-  background: url(../assets/image/load/进度条.png) no-repeat;
+  background-image: url(../../static/image/加载_进度条.png);
   background-size: 100% 100%;
 }
 </style>

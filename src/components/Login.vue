@@ -6,11 +6,11 @@
       <div class="wrapper">
         <div class="phone-container">
           <div class="label">手机号</div>
-          <input placeholder="请输入手机号" maxlength="11" />
+          <input class="phone-input" placeholder="请输入手机号" maxlength="11" />
         </div>
         <div class="password-container">
           <div class="label">密&nbsp;&nbsp;&nbsp;&nbsp;码</div>
-          <input placeholder="请输入密码（6-16位）" maxlength="16" />
+          <input class="password-input" placeholder="请输入密码（6-16位）" maxlength="16" />
         </div>
         <div class="login-btn" v-on:click="login()"></div>
         <div class="link-container">
@@ -104,21 +104,21 @@ export default {
   color: #772e06;
   font-size: 36px;
 }
-input {
+.phone-input, .password-input {
   width: 326px;
   height: 79px;
   padding-left: 26px;
   border: none;
+  outline: none;
   background: url(../assets/image/login/输入框.png);
   background-size: 100% 100%;
 }
-input, input::-webkit-input-placeholder {
+.phone-input, .password-input,
+.phone-input::-webkit-input-placeholder,
+.password-input::-webkit-input-placeholder {
   color: #9f7d59;
   font-size: 30px;
   text-align: left;
-}
-input::-webkit-input-placeholder {
-  outline: none;
 }
 .login-btn {
   width: 318px;

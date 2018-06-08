@@ -42,8 +42,8 @@ export default {
 .avatar {
   display: flex;
   justify-content: space-between;
+  width:360px;
   height: 101px;
-  margin: 0 10px;
 }
 .left-container {
   position: relative;

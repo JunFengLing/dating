@@ -1,6 +1,6 @@
 <template>
-  <section class="goods-item border" v-on:click="test()">
-    <div class="item-img" v-bind:style="itemImg"></div>
+  <section class="goods-item" v-on:click="test()">
+    <div class="item-img"></div>
     <div class="name">{{ itemvalue.name }}</div>
     <div class="money">（参考价：{{ itemvalue.money }}元）</div>
     <span class="coin">{{ itemvalue.coin }}</span>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'phone-charge-item',
+  name: 'goods-item',
   data () {
     return {}
   },
@@ -36,10 +36,6 @@ export default {
   width: 250px;
   height: 274px;
 }
-.border {
-  border-image-source: url(../../static/image/商城_商品分隔线.png);
-  border-image-width: 2px;
-}
 .item-img {
   width: 160px;
   height: 160px;
@@ -53,6 +49,7 @@ export default {
   font-size: 24px;
 }
 .money {
+  text-decoration:line-through;
   color: #7a554e;
 }
 .coin {
