@@ -26,11 +26,9 @@
 import eventBus from '../eventBus.js'
 
 export default {
-  name: 'register',
+  name: 'login',
   data () {
-    return {
-
-    }
+    return {}
   },
   methods: {
     close () {
@@ -59,8 +57,8 @@ export default {
 <style scoped>
 .login {
   height: 1334px;
-  padding-top: 320px;
-  background: url(../assets/image/login/背景.jpg) no-repeat;
+  padding-top: 420px;
+  background-image: url(../../static/image/背景.jpg);
   background-size: 100% 100%;
 }
 .login-container {
