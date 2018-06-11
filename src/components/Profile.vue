@@ -8,13 +8,24 @@
     <div class="prize-container">
       <div class="sub-title">抽中奖品</div>
       <prize-item
-        v-for="(item, index) in prizeList"
+        v-for="(item, index) in newPrizeList[currPage - 1]"
         v-bind:key="index"
         v-bind:itemvalue="item"
         v-bind:itemindex="index"
       >
       </prize-item>
-      <div>123</div>
+      <div class="page-index-container">
+        <div class="arrow" v-on:click="jumpToPrev()">&lt;</div>
+        <div
+          class="page-index"
+          v-bind:style="pageIndexColor(index)"
+          v-for="(item, index) in pageIndexList"
+          v-on:click="jumpToPage(item)"
+        >
+          {{ item }}
+        </div>
+        <div class="arrow" v-on:click="jumpToNext()">&gt;</div>
+      </div>
     </div>
     <div class="address-container">
       <div class="sub-title">地址管理</div>
@@ -44,6 +55,31 @@ export default {
       prizeList: [
         {
           name: '小猪佩奇毛绒公仔',
+          money: 15,
+          status: '去兑换'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 15,
+          status: '兑换中'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 15,
+          status: '已兑换'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 15,
+          status: '已兑换'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 15,
+          status: '已兑换'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
           money: 25,
           status: '去兑换'
         },
@@ -66,8 +102,34 @@ export default {
           name: '小猪佩奇毛绒公仔',
           money: 25,
           status: '已兑换'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 35,
+          status: '去兑换'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 35,
+          status: '兑换中'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 35,
+          status: '已兑换'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 35,
+          status: '已兑换'
+        },
+        {
+          name: '小猪佩奇毛绒公仔',
+          money: 35,
+          status: '已兑换'
         }
       ],
+      currPage: 1,
       receipt: {
         label: '收件人:',
         width: '50%'
@@ -83,7 +145,52 @@ export default {
     }
   },
   computed: {
-
+    newPrizeList () {
+      return this.getNewList(this.prizeList, 5)
+    },
+    pageIndexList () {
+      let pageIndexList = []
+      for (let i = 1; i <= this.newPrizeList.length; i++) {
+        pageIndexList.push(i)
+      }
+      return pageIndexList
+    }
+  },
+  methods: {
+    getNewList (preList, interval) {
+      let newList = []
+      let tempList = []
+      preList.forEach((item, index) => {
+        tempList.push(item)
+        if (((index + 1) % interval === 0) || index + 1 === preList.length) {
+          newList.push(tempList)
+          tempList = []
+        }
+      })
+      return newList
+    },
+    jumpToPage (item) {
+      this.currPage = item
+      console.log(this.currPage)
+    },
+    jumpToPrev () {
+      if (this.currPage > 1) {
+        this.currPage--
+        console.log(this.currPage)
+      }
+    },
+    jumpToNext () {
+      if (this.currPage < this.newPrizeList.length) {
+        this.currPage++
+        console.log(this.currPage)
+      }
+    },
+    pageIndexColor (index) {
+      let color = index === this.currPage - 1 ? '#ffa509' : '#86635b'
+      return {
+        'color': color
+      }
+    }
   },
   components: {
     'comp-title': Title,
@@ -141,5 +248,17 @@ export default {
   display: flex;
   margin-top: 28px;
   margin-bottom: 40px;
+}
+.page-index-container {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+.arrow {
+  margin: 0 40px;
+  color: #86635b;
+}
+.page-index {
+  margin: 0 20px;
 }
 </style>
