@@ -84,7 +84,7 @@ export default {
   right: -19px;
   width: 75px;
   height: 76px;
-  background: url(../../static/image/关闭按钮.png);
+  background-image: url(../../static/image/关闭按钮.png);
   background-size: 100% 100%;
 }
 .wrapper {
@@ -107,7 +107,7 @@ export default {
   padding-left: 24px;
   border: none;
   outline: none;
-  background: url(../../static/image/输入框.png);
+  background-image: url(../../static/image/输入框.png);
   background-size: 100% 100%;
 }
 .input, .input::-webkit-input-placeholder {
@@ -119,7 +119,7 @@ export default {
   width: 318px;
   height: 99px;
   margin: 76px auto 0;
-  background: url(../../static/image/登录_立即登录按钮.png);
+  background-image: url(../../static/image/登录_立即登录按钮.png);
   background-size: 100% 100%;
 }
 .link-container {

@@ -4,22 +4,22 @@
       <div class="register-title"></div>
       <div class="close-btn" v-on:click="close()"></div>
       <div class="wrapper">
-        <div class="phone-container">
+        <div class="input-container">
           <div class="label">手机号</div>
-          <input class="phone-input" placeholder="请输入手机号" maxlength="11" />
+          <input class="input" placeholder="请输入手机号" maxlength="11" />
         </div>
-        <div class="password-container">
+        <div class="input-container">
           <div class="label">密&nbsp;&nbsp;&nbsp;&nbsp;码</div>
-          <input class="password-input" placeholder="请输入密码（6-16位）" maxlength="16" />
+          <input class="input" placeholder="请输入密码（6-16位）" maxlength="16" />
         </div>
-        <div class="password-container">
+        <div class="input-container">
           <div class="label">确&nbsp;&nbsp;&nbsp;&nbsp;认</div>
-          <input class="password-input" placeholder="请输入密码（6-16位）" maxlength="16" />
+          <input class="input" placeholder="请输入密码（6-16位）" maxlength="16" />
         </div>
         <div class="register-btn" v-on:click="register()"></div>
-        <div class="link-container">
-          <div class="check-box" v-bind:class="checkBoxClass" v-on:click="check()"></div>
-          <div>我已阅读并同意<span v-on:click="jump()">《用户协议》</span></div>
+        <div class="agreement-container">
+          <div class="check-box" v-bind:class="checkBoxImg" v-on:click="check()"></div>
+          <div>我已阅读并同意<span v-on:click="agreement()">《用户协议》</span></div>
         </div>
       </div>
     </div>
@@ -37,8 +37,12 @@ export default {
     }
   },
   computed: {
-    checkBoxClass () {
-      return this.isCheck ? 'checked' : 'unchecked'
+    checkBoxImg () {
+      let checkBoxImg = this.isCheck ? '2' : '1'
+      return {
+        'backgroundImage': `url(../../static/image/选框按钮_${checkBoxImg}.png)`,
+        'backgroundSize': '100% 100%'
+      }
     }
   },
   methods: {
@@ -53,7 +57,7 @@ export default {
         page: 'login'
       })
     },
-    jump () {
+    agreement () {
 
     }
   },
@@ -75,7 +79,7 @@ export default {
   width: 612px;
   height: 632px;
   margin: 0 auto;
-  background: url(../assets/image/login/背景.png);
+  background-image: url(../../static/image/背景.png);
   background-size: 100% 100%;
 }
 .register-title {
@@ -84,7 +88,7 @@ export default {
   width: 281px;
   height: 90px;
   margin: 0 auto;
-  background: url(../assets/image/login/标题_注册.png);
+  background-image: url(../../static/image/注册_标题.png);
   background-size: 100% 100%;
 }
 .close-btn {
@@ -93,15 +97,14 @@ export default {
   right: -19px;
   width: 75px;
   height: 76px;
-  background: url(../assets/image/关闭按钮.png);
+  background-image: url(../../static/image/关闭按钮.png);
   background-size: 100% 100%;
 }
 .wrapper {
-  width: 478px;
-  height: 444px;
+  width: 480px;
   margin: 0 auto;
 }
-.phone-container, .password-container {
+.input-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,18 +114,16 @@ export default {
   color: #772e06;
   font-size: 36px;
 }
-.phone-input, .password-input {
+.input {
   width: 326px;
   height: 79px;
-  padding-left: 26px;
+  padding-left: 24px;
   border: none;
   outline: none;
-  background: url(../assets/image/login/输入框.png);
+  background-image: url(../../static/image/输入框.png);
   background-size: 100% 100%;
 }
-.phone-input, .password-input,
-.phone-input::-webkit-input-placeholder,
-.password-input::-webkit-input-placeholder {
+.input, .input::-webkit-input-placeholder {
   color: #9f7d59;
   font-size: 30px;
   text-align: left;
@@ -131,32 +132,25 @@ export default {
   width: 318px;
   height: 99px;
   margin: 30px auto 0;
-  background: url(../assets/image/login/注册按钮.png);
+  background-image: url(../../static/image/注册_注册按钮.png);
   background-size: 100% 100%;
 }
-.link-container {
+.agreement-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
 }
-.link-container div {
+.agreement-container div {
+  padding: 2px;
   font-size: 32px;
   color: #772e06;
 }
-.link-container span {
+.agreement-container span {
   border-bottom: 1px solid #772e06;
 }
 .check-box {
   width: 31px;
   height: 31px;
-}
-.unchecked {
-  background: url(../assets/image/login/选框按钮_1.png);
-  background-size: 100% 100%;
-}
-.checked {
-  background: url(../assets/image/login/选框按钮_2.png);
-  background-size: 100% 100%;
 }
 </style>
