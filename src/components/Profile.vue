@@ -20,6 +20,7 @@
           class="page-index"
           v-bind:style="pageIndexColor(index)"
           v-for="(item, index) in pageIndexList"
+          v-bind:key="index"
           v-on:click="jumpToPage(item)"
         >
           {{ item }}
@@ -149,9 +150,10 @@ export default {
       return this.getNewList(this.prizeList, 5)
     },
     pageIndexList () {
-      let pageIndexList = []
-      for (let i = 1; i <= this.newPrizeList.length; i++) {
-        pageIndexList.push(i)
+      let length = this.newPrizeList.length
+      let pageIndexList = new Array(length)
+      for (let i = 0; i < length; i++) {
+        pageIndexList[i] = i + 1
       }
       return pageIndexList
     }

@@ -80,7 +80,7 @@ export default {
 }
 .register-title {
   position: relative;
-  top: -30px;
+  top: -36px;
   width: 281px;
   height: 90px;
   margin: 0 auto;
@@ -89,8 +89,8 @@ export default {
 }
 .close-btn {
   position: absolute;
-  top: -16px;
-  right: -16px;
+  top: -19px;
+  right: -19px;
   width: 75px;
   height: 76px;
   background: url(../assets/image/关闭按钮.png);
