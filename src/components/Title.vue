@@ -1,5 +1,5 @@
 <template>
-  <section class="comp-title" v-bind:style="titleStyle"></section>
+  <section class="comp-title" v-bind:style="titleImg"></section>
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
     }
   },
   computed: {
-    titleStyle () {
+    titleImg () {
       const titleObj = {
         game: '游戏_标题',
         shop: '商城_标题',

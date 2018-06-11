@@ -33,17 +33,7 @@ export default {
     }
   },
   computed: {
-    titleStyle () {
-      const titleObj = {
-        game: '游戏_标题',
-        shop: '商城_标题',
-        profile: '个人中心_标题'
-      }
-      return {
-        'backgroundImage': `url(../../static/image/${titleObj[this.page]}.png)`,
-        'backgroundSize': '100% 100%'
-      }
-    }
+
   },
   methods: {
     rechange () {
@@ -83,7 +73,7 @@ export default {
   font-size: 28px;
   font-weight: bold;
   color: #ffffff;
-  background: url(../assets/image/game/背景.png) no-repeat;
+  background-image: url(../../static/image/背景.png);
   background-size: 100% 100%;
 }
 .container, .btn-container {
@@ -91,24 +81,30 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
+.container {
+  margin: 0 12px;
+}
+.btn-container {
+  width: 350px;
+}
 .btn-container div {
   width: 112px;
   height: 70px;
 }
 .recharge-btn {
-  background: url(../assets/image/game/充值按钮.png) no-repeat;
+  background-image: url(../../static/image/游戏_充值按钮.png);
   background-size: 100% 100%;
 }
 .lottery-btn {
-  background: url(../assets/image/game/抽奖按钮.png) no-repeat;
+  background-image: url(../../static/image/游戏_抽奖按钮.png);
   background-size: 100% 100%;
 }
 .task-btn {
-  background: url(../assets/image/game/任务.png) no-repeat;
+  background-image: url(../../static/image/游戏_任务按钮.png);
   background-size: 100% 100%;
 }
 .advertisement {
   height: 260px;
-  background: url(../assets/image/game/系统消息背景.png) repeat;
+  background-color: rgba(52,20,12,0.6)
 }
 </style>

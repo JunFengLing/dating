@@ -68,13 +68,13 @@ export default {
   height: 70px;
   line-height: 70px;
   margin-top: 2px;
-  background: url(../assets/image/game/系统消息背景.png) repeat;
+  background-color: rgba(52,20,12,0.6)
 }
 .message-icon {
   width: 37px;
   height: 36px;
   margin: auto 20px;
-  background: url(../assets/image/game/喇叭标志.png) no-repeat;
+  background-image: url(../../static/image/喇叭标志.png);
   background-size: 100% 100%;
 }
 .swiper-container {

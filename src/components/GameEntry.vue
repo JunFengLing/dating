@@ -5,7 +5,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(itemList, index) in gameList" v-bind:key="index">
           <div class="game-wrapper">
-            <div v-for="item in itemList" v-bind:key="item.id">
+            <div v-for="item in itemList" v-bind:key="item.id" v-on:click="game(item.id)">
               <img v-bind:src="item.img" width="100%" height="100%"/>
             </div>
           </div>
@@ -30,31 +30,31 @@ export default {
         [
           {
             id: 0,
-            img: require('../assets/image/game/游戏icon_1.png'),
+            img: require('../../static/image/游戏_icon_1.png'),
             url: ''
           },
           {
             id: 1,
-            img: require('../assets/image/game/游戏icon_1.png'),
+            img: require('../../static/image/游戏_icon_1.png'),
             url: ''
           }
         ],
         [
           {
             id: 2,
-            img: require('../assets/image/game/游戏icon_1.png'),
+            img: require('../../static/image/游戏_icon_1.png'),
             url: ''
           },
           {
             id: 3,
-            img: require('../assets/image/game/游戏icon_1.png'),
+            img: require('../../static/image/游戏_icon_1.png'),
             url: ''
           }
         ],
         [
           {
             id: 4,
-            img: require('../assets/image/game/游戏icon_1.png'),
+            img: require('../../static/image/游戏_icon_1.png'),
             url: ''
           }
         ]
@@ -77,6 +77,9 @@ export default {
           prevEl: '.swiper-button-prev'
         }
       })
+    },
+    game (id) {
+      alert(id)
     }
   },
   mounted () {

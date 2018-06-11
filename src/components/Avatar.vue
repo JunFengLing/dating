@@ -1,6 +1,6 @@
 <template>
   <section class="avatar">
-    <div class="left-container" v-on:click="changAvatar()">
+    <div class="left-container" v-on:click="change()">
       <div class="avatar-bg"></div>
       <div class="avatar-img"></div>
     </div>
@@ -25,7 +25,7 @@ export default {
 
   },
   methods: {
-    changAvatar () {
+    change () {
       alert('change avatar')
     }
   },
@@ -42,7 +42,7 @@ export default {
 .avatar {
   display: flex;
   justify-content: space-between;
-  width:360px;
+  width: 360px;
   height: 101px;
 }
 .left-container {
@@ -50,18 +50,15 @@ export default {
   width: 100px;
   height: 100%;
 }
-.left-container {
-  flex: 1;
-}
 .avatar-bg {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100px;
   height: 100%;
-  background: url(../assets/image/game/头像背景.png) no-repeat;
+  background-image: url(../../static/image/头像背景.png);
   background-size: 100% 100%;
-  z-index: 1;
+  z-index: 110;
 }
 .avatar-img {
 

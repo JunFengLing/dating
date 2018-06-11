@@ -126,7 +126,7 @@ export default {
   font-size: 28px;
   font-weight: bold;
   color: #ffffff;
-  background: url(../assets/image/game/背景.png) no-repeat;
+  background: url(../../static/image/背景.png) no-repeat;
   background-size: 100% 100%;
 }
 .sub-title {

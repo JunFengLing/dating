@@ -79,7 +79,7 @@ export default {
   width: 612px;
   height: 632px;
   margin: 0 auto;
-  background-image: url(../../static/image/背景.png);
+  background-image: url(../../static/image/登录_注册_背景.png);
   background-size: 100% 100%;
 }
 .register-title {
