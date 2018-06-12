@@ -1,7 +1,7 @@
 <template>
   <section class="task-item">
     <div class="task-description">{{ taskitemvalue.description }}</div>
-    <div class="task-btn" v-bind:class="taskBtnClass" v-on:click="doTask()"></div>
+    <div class="task-btn" v-bind:style="taskBtnImg" v-on:click="doTask()"></div>
   </section>
 </template>
 
@@ -17,8 +17,12 @@ export default {
     'taskitemvalue'
   ],
   computed: {
-    taskBtnClass () {
-      return this.taskitemvalue.isComplete ? 'complete-task-btn' : 'not-complete-task-btn'
+    taskBtnImg () {
+      let taskBtnImg = this.taskitemvalue.isComplete ? '已兑换' : '去完成'
+      return {
+        'backgroundImage': `url(../../static/image/任务_${taskBtnImg}按钮.png)`,
+        'backgroundSize': '100% 100%'
+      }
     }
   },
   methods: {
@@ -37,26 +41,17 @@ export default {
   width: 592px;
   height: 99px;
   margin: 0 auto;
-  background: url(../assets/image/task/任务栏背景.png);
+  background-image: url(../../static/image/任务_任务栏背景.png);
   background-size: 100% 100%;
 }
 .task-description {
   width: 330px;
   margin-left: 100px;
   text-align: left;
-
 }
 .task-btn {
   width: 136px;
   height: 54px;
   margin-right: 10px
-}
-.complete-task-btn {
-  background: url(../assets/image/task/已兑换按钮.png);
-  background-size: 100% 100%;
-}
-.not-complete-task-btn {
-  background: url(../assets/image/task/去完成按钮.png);
-  background-size: 100% 100%;
 }
 </style>

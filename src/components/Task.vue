@@ -77,7 +77,7 @@ export default {
   width: 656px;
   height: 868px;
   margin: 254px auto;
-  background: url(../assets/image/task/背景.png);
+  background-image: url(../../static/image/任务_弹窗背景.png);
   background-size: 100% 100%;
 }
 .task-title {
@@ -86,7 +86,7 @@ export default {
   width: 285px;
   height: 95px;
   margin: 0 auto;
-  background: url(../assets/image/task/任务标题.png);
+  background-image: url(../../static/image/任务_标题.png);
   background-size: 100% 100%;
 }
 .close-btn {
@@ -95,7 +95,7 @@ export default {
   right: -14px;
   width: 75px;
   height: 76px;
-  background: url(../../static/image/关闭按钮.png);
+  background-image: url(../../static/image/关闭按钮.png);
   background-size: 100% 100%;
 }
 </style>
