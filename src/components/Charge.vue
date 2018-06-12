@@ -1,7 +1,7 @@
 <template>
   <section class="charge" v-show="isShow">
     <div class="charge-container">
-      <div class="charge-title" v-bind:class="chargeTitle"></div>
+      <div class="charge-title" v-bind:style="chargeImg"></div>
       <div class="close-btn" v-on:click="close()"></div>
       <div class="charge-item-contianer">
         <charge-item
@@ -49,8 +49,12 @@ export default {
     }
   },
   computed: {
-    chargeTitle () {
-      return this.isFirstTimeCharge ? 'first-time-charge' : 'not-first-time-charge'
+    chargeImg () {
+      let changeImg = this.isFirstTimeCharge ? '首充' : ''
+      return {
+        'backgroundImage': `url(../../static/image/充值_${changeImg}标题.png)`,
+        'backgroundSize': '100% 100%'
+      }
     }
   },
   methods: {
@@ -84,31 +88,23 @@ export default {
   width: 615px;
   height: 797px;
   margin: 290px auto;
-  background: url(../assets/image/charge/弹窗背景.png);
+  background-image: url(../../static/image/充值_弹窗背景.png);
   background-size: 100% 100%;
 }
 .charge-title {
   position: relative;
-  top: -30px;
+  top: -36px;
   width: 285px;
   height: 95px;
   margin: 0 auto;
 }
-.first-time-charge {
-  background: url(../assets/image/charge/首充标题.png);
-  background-size: 100% 100%;
-}
-.not-first-time-charge {
-  background: url(../assets/image/charge/标题_充值.png);
-  background-size: 100% 100%;
-}
 .close-btn {
   position: absolute;
-  top: -14px;
-  right: -14px;
+  top: -19px;
+  right: -19px;
   width: 75px;
   height: 76px;
-  background: url(../assets/image/charge/关闭按钮.png);
+  background-image: url(../../static/image/关闭按钮.png);
   background-size: 100% 100%;
 }
 .charge-item-contianer {

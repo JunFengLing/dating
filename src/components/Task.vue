@@ -95,7 +95,7 @@ export default {
   right: -14px;
   width: 75px;
   height: 76px;
-  background: url(../assets/image/charge/关闭按钮.png);
+  background: url(../../static/image/关闭按钮.png);
   background-size: 100% 100%;
 }
 </style>

@@ -1,14 +1,14 @@
 <template>
   <section class="charge-item" v-bind:style="chargeItemStyle" v-on:click="charge()">
     <div class="off-tag" v-show="isfirsttimecharge"></div>
-    <div class="coin-label" v-bind:class="coinLableClass">
+    <div class="coin-label" v-bind:style="coinLableImg">
       <div class="coin-item-wrapper">
         <div class="coin-item-container" v-show="isfirsttimecharge">
           <div class="coin-item"></div>
           <div class="coin-item"
             v-for="(item, index) in coinItemList"
             v-bind:key="index"
-            v-bind:class="coinItemClass(item)"
+            v-bind:style="coinItemImg(item)"
           >
           </div>
         </div>
@@ -17,7 +17,7 @@
           <div class="coin-item"
             v-for="(item, index) in coinItemList"
             v-bind:key="index"
-            v-bind:class="coinItemClass(item)"
+            v-bind:style="coinItemImg(item)"
           >
           </div>
         </div>
@@ -28,7 +28,7 @@
       <div class="money-item"
         v-for="(item, index) in moneyItemList"
         v-bind:key="index"
-        v-bind:class="moneyItemClass(item)"
+        v-bind:style="moneyItemImg(item)"
       >
       </div>
     </div>
@@ -55,8 +55,11 @@ export default {
         'alignSelf': alignSelf
       }
     },
-    coinLableClass () {
-      return `coin-label-${this.chargeitemindex + 1}`
+    coinLableImg () {
+      return {
+        'backgroundImage': `url(../../static/image/充值_金币_${this.chargeitemindex + 1}.png)`,
+        'backgroundSize': '100% 100%'
+      }
     },
     coinItemList () {
       return `${this.chargeitemvalue.coin}`.split('')
@@ -69,11 +72,17 @@ export default {
     charge () {
       alert('charge')
     },
-    coinItemClass (item) {
-      return `coin-item-${item}`
+    coinItemImg (item) {
+      return {
+        'backgroundImage': `url(../../static/image/充值_金币数字/${item}.png)`,
+        'backgroundSize': '100% 100%'
+      }
     },
-    moneyItemClass (item) {
-      return `money-item-${item}`
+    moneyItemImg (item) {
+      return {
+        'backgroundImage': `url(../../static/image/充值_按钮/${item}.png)`,
+        'backgroundSize': '100% 100%'
+      }
     }
   }
 }
@@ -84,7 +93,7 @@ export default {
   position: relative;
   width: 210px;
   height: 276px;
-  background: url(../assets/image/charge/金币背景.png);
+  background-image: url(../../static/image/充值_金币背景.png);
   background-size: 100% 100%;
 }
 .off-tag {
@@ -93,7 +102,7 @@ export default {
   top: 0;
   width: 141px;
   height: 112px;
-  background: url(../assets/image/charge/off标签.png);
+  background-image: url(../../static/image/充值_off标签.png);
   background-size: 100% 100%;
   z-index: 210;
 }
@@ -103,22 +112,6 @@ export default {
   height: 156px;
   margin: 17px auto;
 }
-.coin-label-1 {
-  background: url(../assets/image/charge/金币_1.png);
-  background-size: 100% 100%;
-}
-.coin-label-2 {
-  background: url(../assets/image/charge/金币_2.png);
-  background-size: 100% 100%;
-}
-.coin-label-3 {
-  background: url(../assets/image/charge/金币_3.png);
-  background-size: 100% 100%;
-}
-.coin-label-4 {
-  background: url(../assets/image/charge/金币_4.png);
-  background-size: 100% 100%;
-}
 .charge-btn {
   display: flex;
   justify-content: center;
@@ -126,7 +119,7 @@ export default {
   width: 180px;
   height: 67px;
   margin: 0 auto;
-  background: url(../assets/image/charge/按钮/按钮背景.png);
+  background-image: url(../../static/image/充值_按钮/按钮背景.png);
   background-size: 100% 100%;
 }
 .coin-item-wrapper {
@@ -142,47 +135,7 @@ export default {
   height: 36px;
 }
 .coin-item-add {
-  background: url(../assets/image/charge/金币数字/+.png);
-  background-size: 100% 100%;
-}
-.coin-item-0 {
-  background: url(../assets/image/charge/金币数字/0.png);
-  background-size: 100% 100%;
-}
-.coin-item-1 {
-  background: url(../assets/image/charge/金币数字/1.png);
-  background-size: 100% 100%;
-}
-.coin-item-2 {
-  background: url(../assets/image/charge/金币数字/2.png);
-  background-size: 100% 100%;
-}
-.coin-item-3 {
-  background: url(../assets/image/charge/金币数字/3.png);
-  background-size: 100% 100%;
-}
-.coin-item-4 {
-  background: url(../assets/image/charge/金币数字/4.png);
-  background-size: 100% 100%;
-}
-.coin-item-5 {
-  background: url(../assets/image/charge/金币数字/5.png);
-  background-size: 100% 100%;
-}
-.coin-item-6 {
-  background: url(../assets/image/charge/金币数字/6.png);
-  background-size: 100% 100%;
-}
-.coin-item-7 {
-  background: url(../assets/image/charge/金币数字/7.png);
-  background-size: 100% 100%;
-}
-.coin-item-8 {
-  background: url(../assets/image/charge/金币数字/8.png);
-  background-size: 100% 100%;
-}
-.coin-item-9 {
-  background: url(../assets/image/charge/金币数字/9.png);
+  background-image: url(../../static/image/充值_金币数字/+.png);
   background-size: 100% 100%;
 }
 .money-item {
@@ -191,48 +144,7 @@ export default {
 }
 .money-item-rmb {
   margin-right: 4px;
-  background: url(../assets/image/charge/按钮/￥.png);
+  background-image: url(../../static/image/充值_按钮/￥.png);
   background-size: 100% 100%;
 }
-.money-item-0 {
-  background: url(../assets/image/charge/按钮/0.png);
-  background-size: 100% 100%;
-}
-.money-item-1 {
-  background: url(../assets/image/charge/按钮/1.png);
-  background-size: 100% 100%;
-}
-.money-item-2 {
-  background: url(../assets/image/charge/按钮/2.png);
-  background-size: 100% 100%;
-}
-.money-item-3 {
-  background: url(../assets/image/charge/按钮/3.png);
-  background-size: 100% 100%;
-}
-.money-item-4 {
-  background: url(../assets/image/charge/按钮/4.png);
-  background-size: 100% 100%;
-}
-.money-item-5 {
-  background: url(../assets/image/charge/按钮/5.png);
-  background-size: 100% 100%;
-}
-.money-item-6 {
-  background: url(../assets/image/charge/按钮/6.png);
-  background-size: 100% 100%;
-}
-.money-item-7 {
-  background: url(../assets/image/charge/按钮/7.png);
-  background-size: 100% 100%;
-}
-.money-item-8 {
-  background: url(../assets/image/charge/按钮/8.png);
-  background-size: 100% 100%;
-}
-.money-item-9 {
-  background: url(../assets/image/charge/按钮/9.png);
-  background-size: 100% 100%;
-}
-
 </style>
