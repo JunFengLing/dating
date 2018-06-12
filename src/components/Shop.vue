@@ -2,9 +2,9 @@
   <section class="shop">
     <comp-title></comp-title>
     <message></message>
-    <div>
+    <div class="phone-charge-container">
       <div class="sub-title">手机充值</div>
-      <div class="phone-charge-container">
+      <div class="wrapper">
         <phone-charge-item
           v-for="(item, index) in phoneChargeList"
           v-bind:key="index"
@@ -13,9 +13,9 @@
         </phone-charge-item>
       </div>
     </div>
-    <div>
+    <div class="goods-container">
       <div class="sub-title">商品</div>
-      <div class="goods-container">
+      <div class="wrapper">
         <goods-item
           v-for="(item, index) in goodsList"
           v-bind:key="index"
@@ -59,37 +59,37 @@ export default {
       ],
       goodsList: [
         {
-          goods: 0,
+          img: require('../../static/image/商城_商品图片.png'),
           name: '小猪佩奇毛绒公仔',
           money: 25,
           coin: 100000
         },
         {
-          goods: 0,
+          img: require('../../static/image/商城_商品图片.png'),
           name: '小猪佩奇毛绒公仔',
           money: 25,
           coin: 100000
         },
         {
-          goods: 0,
+          img: require('../../static/image/商城_商品图片.png'),
           name: '小猪佩奇毛绒公仔',
           money: 25,
           coin: 100000
         },
         {
-          goods: 0,
+          img: require('../../static/image/商城_商品图片.png'),
           name: '小猪佩奇毛绒公仔',
           money: 25,
           coin: 100000
         },
         {
-          goods: 0,
+          img: require('../../static/image/商城_商品图片.png'),
           name: '小猪佩奇毛绒公仔',
           money: 25,
           coin: 100000
         },
         {
-          goods: 0,
+          img: require('../../static/image/商城_商品图片.png'),
           name: '小猪佩奇毛绒公仔',
           money: 25,
           coin: 100000
@@ -126,8 +126,11 @@ export default {
   font-size: 28px;
   font-weight: bold;
   color: #ffffff;
-  background: url(../../static/image/背景.png) no-repeat;
+  background-image: url(../../static/image/背景.png);
   background-size: 100% 100%;
+}
+.phone-charge-container {
+  margin-top: 150px;
 }
 .sub-title {
   height: 70px;
@@ -135,10 +138,8 @@ export default {
   background-color: rgba(52,20,12,0.6);
   font-size: 32px;
 }
-.phone-charge-container, .goods-container {
+.wrapper {
   display: flex;
-}
-.goods-container {
   flex-wrap: wrap;
 }
 </style>
