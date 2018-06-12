@@ -48,6 +48,7 @@ export default {
 .goods-item-border {
   width: 2px;
   height: 215px;
+  margin: auto 0;
   background-image: url(../../static/image/商城_商品分隔线.png);
   background-size: 100% 100%;
 }

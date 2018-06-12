@@ -1,7 +1,9 @@
 <template>
   <section class="prize-item">
-    <div class="item-img"></div>
-    <div>
+    <div class="prize-item-img">
+      <img v-bind:src="itemvalue.img" width="100%" height="100%"/>
+    </div>
+    <div class="prize-item-text">
       <div class="name">{{ itemvalue.name }}</div>
       <div class="money">（参考价：{{ itemvalue.money }}元）</div>
     </div>
@@ -43,15 +45,18 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 750px;
   height: 130px;
+  margin-left: 46px;
+  margin-right: 36px;
 }
-.item-img {
+.prize-item-img {
   width: 90px;
   height: 90px;
-  /* margin: 26px auto 0; */
-  background: url(../../static/image/个人中心_充值奖品图片.png);
-  background-size: 100% 100%;
+}
+.prize-item-text {
+  flex: 1;
+  padding: 40px;
+  text-align: left;
 }
 .name, .money {
   height: 34px;
