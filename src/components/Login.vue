@@ -131,6 +131,7 @@ export default {
   padding-left: 24px;
   border: none;
   outline: none;
+  background-color: transparent;
   background-image: url(../../static/image/输入框.png);
   background-size: 100% 100%;
 }
