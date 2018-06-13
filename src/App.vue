@@ -13,6 +13,7 @@
 
 <script>
 import eventBus from './eventBus.js'
+import httpUtil from './utils/httpUtil.js'
 
 import Load from './components/Load'
 import Login from './components/Login'
@@ -35,14 +36,11 @@ export default {
   },
   methods: {
     test () {
-      return fetch('https://www.baidu.com')
-        .then(res => res.text())
-        .then(body => {
-          console.log(body)
-        })
-        .catch(err => {
-          console.error(err)
-        })
+      httpUtil.get('https://www.baidu.com').then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
     }
   },
   created () {

@@ -6,15 +6,32 @@
       <div class="wrapper">
         <div class="input-container">
           <div class="label">手机号</div>
-          <input class="input" placeholder="请输入手机号" maxlength="11" />
+          <input
+            class="input"
+            v-model="phoneNumber"
+            placeholder="请输入手机号"
+            maxlength="11"
+          />
         </div>
         <div class="input-container">
           <div class="label">密&nbsp;&nbsp;&nbsp;&nbsp;码</div>
-          <input class="input" placeholder="请输入密码（6-16位）" maxlength="16" />
+          <input
+            class="input"
+            v-model="password"
+            type="password"
+            placeholder="请输入密码（6-16位）"
+            maxlength="16"
+          />
         </div>
         <div class="input-container">
           <div class="label">确&nbsp;&nbsp;&nbsp;&nbsp;认</div>
-          <input class="input" placeholder="请输入密码（6-16位）" maxlength="16" />
+          <input
+            class="input"
+            v-model="rePassword"
+            type="password"
+            placeholder="请输入密码（6-16位）"
+            maxlength="16"
+          />
         </div>
         <div class="register-btn" v-on:click="register()"></div>
         <div class="agreement-container">
@@ -33,6 +50,9 @@ export default {
   name: 'register',
   data () {
     return {
+      phoneNumber: '',
+      password: '',
+      rePassword: '',
       isCheck: false
     }
   },
@@ -43,6 +63,10 @@ export default {
         'backgroundImage': `url(../../static/image/选框按钮_${checkBoxImg}.png)`,
         'backgroundSize': '100% 100%'
       }
+    },
+    isPasswordValid () {
+      const reg = /^.{6,}$/
+      return reg.test(this.password)
     }
   },
   methods: {

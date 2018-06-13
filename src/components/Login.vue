@@ -6,11 +6,22 @@
       <div class="wrapper">
         <div class="input-container">
           <div class="label">手机号</div>
-          <input class="input" placeholder="请输入手机号" maxlength="11" />
+          <input
+            class="input"
+            v-model="phoneNumber"
+            placeholder="请输入手机号"
+            maxlength="11"
+          />
         </div>
         <div class="input-container">
           <div class="label">密&nbsp;&nbsp;&nbsp;&nbsp;码</div>
-          <input class="input" placeholder="请输入密码（6-16位）" maxlength="16" />
+          <input
+            class="input"
+            v-model="password"
+            type="password"
+            placeholder="请输入密码（6-16位）"
+            maxlength="16"
+          />
         </div>
         <div class="login-btn" v-on:click="login()"></div>
         <div class="link-container">
@@ -28,7 +39,20 @@ import eventBus from '../eventBus.js'
 export default {
   name: 'login',
   data () {
-    return {}
+    return {
+      phoneNumber: '',
+      password: ''
+    }
+  },
+  computed: {
+    isPhoneNumberValid () {
+      const reg = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/
+      return reg.test(this.phoneNumber)
+    },
+    isPasswordValid () {
+      const reg = /^.{6,}$/
+      return reg.test(this.password)
+    }
   },
   methods: {
     close () {
